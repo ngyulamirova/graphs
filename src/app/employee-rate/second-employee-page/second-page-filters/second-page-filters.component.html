@@ -1,0 +1,14 @@
+<div class="second-page-filters__container" [formGroup]="form">
+  <div class="form-line" style="margin-right: 24px">
+    <div class="form-element">
+      <p class="second-page-filters__title">{{selectList.breakdowns.name}}</p>
+      <p-dropdown [options]="selectList.breakdowns.props" optionLabel="name" optionValue="value" formControlName="breakdowns"></p-dropdown>
+    </div>
+</div>
+<div>
+    <div *ngIf="selectList.sort.props.length" class="form-element">
+      <p class="second-page-filters__title">{{selectList.sort.name}}</p>
+      <p-dropdown [options]="selectList.sort.props" optionLabel="name" optionValue="value" formControlName="sort"></p-dropdown>
+    </div>
+  </div>
+</div>

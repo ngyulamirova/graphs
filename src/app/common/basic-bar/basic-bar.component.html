@@ -1,0 +1,8 @@
+<h2>
+  <span>{{title}}</span>
+</h2>
+<div echarts
+     [style.height]="_height"
+     [theme]="'dark'"
+     [options]="chartOptions"
+     (chartInit)="chartInstance = $event"></div>

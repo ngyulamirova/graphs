@@ -1,0 +1,88 @@
+<div class="column">
+  <div class="block">
+    <div class="row">
+      <div class="col-4">
+        <app-bar-chart title="По годам"
+                       type="vertical"
+                       [data]="ODOU_YearChartData">
+        </app-bar-chart>
+      </div>
+      <div class="col-8">
+        <app-line-chart title="Динамика регистрации ОД/ОУ"
+                        [data]="ODOU_chartData"
+        ></app-line-chart>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="row">
+      <div class="col-6">
+
+        <app-bar-chart title="В резрезе ДО регистрация ОД/ОУ"
+                       type="horizontal"
+                       [scrollable]="false"
+                       [data]="ODOUDO_ChartData">
+          <div class="form-line">
+            <div class="form-element">
+              <p-dropdown [options]="sortingDO"
+                          (onChange)="getDataForODOUODChart();"
+                          optionLabel="label"
+                          optionValue="value"
+                          [(ngModel)]="sortDO"
+              ></p-dropdown>
+            </div>
+          </div>
+        </app-bar-chart>
+      </div>
+
+      <div class="col-6">
+       <app-pie-chart [data]="PBP_ChartData"></app-pie-chart>
+      </div>
+
+    </div>
+  </div>
+
+  <!--<div class="block">-->
+  <div class="row">
+    <div class="block col-6">
+
+      <app-bar-chart title="В разрезе ОПО"
+                     type="horizontal"
+                     [scrollable]="true"
+                     [data]="OPO_ChartData">
+        <div class="form-line">
+          <div class="form-element">
+            <p-dropdown [options]="sortingDO"
+                        (onChange)="getDataForOPOChart();"
+                        optionLabel="label"
+                        optionValue="value"
+                        [(ngModel)]="sortOPO"
+            ></p-dropdown>
+          </div>
+        </div>
+      </app-bar-chart>
+    </div>
+    <div class="block col-6">
+
+      <app-bar-chart title="В разрезе Ямал и ПО"
+                     type="horizontal"
+                     [scrollable]="true"
+                     [data]="ODOUPO_ChartData">
+        <div class="form-line">
+          <div class="form-element">
+            <p-dropdown [options]="sortingDO"
+                        (onChange)="getDataForPOChart();"
+                        optionLabel="label"
+                        optionValue="value"
+                        [(ngModel)]="sortPO"
+            ></p-dropdown>
+          </div>
+        </div>
+      </app-bar-chart>
+    </div>
+  </div>
+</div>
+
+
+

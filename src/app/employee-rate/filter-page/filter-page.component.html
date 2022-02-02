@@ -1,0 +1,27 @@
+<div class="filter-page__container" [formGroup]="form">
+  <div class="form-line" style="margin-right: 24px">
+    <div class="form-element">
+      <p class="filter-page__title">{{selectList.breakdowns.name}}</p>
+      <p-dropdown [options]="selectList.breakdowns.props" optionLabel="name" optionValue="value" formControlName="breakdowns"></p-dropdown>
+    </div>
+  </div>
+  <div class="form-line" style="margin-right: 24px">
+    <div class="form-element">
+      <p class="filter-page__title">{{selectList.direction.name}}</p>
+      <p-multiSelect [options]="selectList.direction.props" optionLabel="name" formControlName="direction"></p-multiSelect>
+    </div>
+  </div>
+  <div class="form-line" style="margin-right: 24px">
+    <div class="form-element">
+      <p class="filter-page__title">{{selectList.category.name}}</p>
+      <p-multiSelect [options]="selectList.category.props" optionLabel="name" formControlName="category"></p-multiSelect>
+    </div>
+  </div>
+  <div class="form-line" style="margin-right: 24px">
+    <div class="form-element">
+      <p class="filter-page__title">{{selectList.type.name}}</p>
+      <p-multiSelect [options]="selectList.type.props" optionLabel="name" formControlName="type"></p-multiSelect>
+    </div>
+  </div>
+</div>
+

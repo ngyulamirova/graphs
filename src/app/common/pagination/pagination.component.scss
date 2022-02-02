@@ -1,0 +1,21 @@
+.pagination {
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #777E90;
+  }
+
+  &__element {
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #777E90;
+  }
+}
+
+.active {
+  color: white;
+  font-weight: 500;
+  border-bottom: 1px solid #3772FF;
+}

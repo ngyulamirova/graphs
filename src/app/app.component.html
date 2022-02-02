@@ -1,0 +1,16 @@
+<app-header [blur]="isLoading"></app-header>
+<div class="wrapper" [class.blur]="isLoading">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="loader" *ngIf="isLoading">
+  <div>
+    <mat-progress-spinner
+      class="example-margin"
+      color="primary"
+      mode="indeterminate"
+      strokeWidth="4"
+      diameter="100">
+    </mat-progress-spinner>
+  </div>
+</div>

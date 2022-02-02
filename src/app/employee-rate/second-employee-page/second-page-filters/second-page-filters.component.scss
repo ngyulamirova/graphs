@@ -1,0 +1,11 @@
+.second-page-filters {
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+  &__title {
+    font-size: 13px;
+    color: white;
+  }
+}

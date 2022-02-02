@@ -1,0 +1,47 @@
+@import '../../../assets/scss/mixin';
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $header;
+  padding: 4px 24px;
+  height: 64px;
+  z-index: 98;
+  display: flex;
+  > *{
+    align-self: center;
+  }
+  h1{
+    color: rgba(255,255,255,0.8);
+    margin:0;
+  }
+  p-fileupload{
+    position: absolute;
+    right: 24px;
+  }
+  .logo {
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-image: url('../../../assets/images/logo.png');
+    width: 120px;
+    height: 100%;
+  }
+  nav {
+    margin: 12px 32px;
+    display: flex;
+    > button:not(:last-child){
+      margin-right: 12px;
+    }
+    .header-button {
+      background: $primary-color;
+      color: #fff;
+      border-radius: 2px;
+      &.active {
+        background: $sec-color;
+        color: #fff;
+      }
+    }
+  }
+}

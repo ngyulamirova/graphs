@@ -1,0 +1,6 @@
+<h2>{{title}}</h2>
+<div echarts
+     *ngIf="chartOptions"
+     (chartInit)="chartInstance = $event"
+     [theme]="'dark'"
+     [options]="chartOptions" class="demo-chart"></div>

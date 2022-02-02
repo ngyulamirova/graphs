@@ -1,0 +1,17 @@
+<app-pagination [(selectedPage)] = "step" (selectedPageChange)="router.navigate([], { queryParams: {step: step}})"></app-pagination>
+<div class="employee-rate__filter-container">
+  <app-filter-page [selectList]="selectList" (selectedFiltersChange)="filtersChange($event)"></app-filter-page>
+  <div class="employee-rate__colors-list">
+    <div *ngFor="let color of colors" class="employee-rate__legend">
+      <div class="employee-rate__legend--color" [style.backgroundColor]="color.color"></div>
+      <p class="employee-rate__legend--text">{{color.title}}</p>
+    </div>
+  </div>
+</div>
+<div class="column">
+  <app-first-employee-page *ngIf="step === 1 else secondPage" [data] = "data"  [filtredData]="filtredData" [filters]="selectedFilters"></app-first-employee-page>
+</div>
+
+<ng-template #secondPage>
+  <app-second-employee-page  [data] = "data" [filtredData]="filtredData" [filters]="selectedFilters"></app-second-employee-page>
+</ng-template>

@@ -1,0 +1,35 @@
+<div class="block">
+  <div class="second-employee-page__container">
+    <div style="position:relative;">
+      <app-second-page-filters class="second-employee-page__filters"
+                               [selectList]="organisationFilters"
+                               [value]="selectedFilters"
+                               (selectedFiltersChange)="organizationFiltersChange($event)"></app-second-page-filters>
+      <app-bar-stack [chartOptions]="organisationStackBarData"
+                     [titleBottom]="60"
+                     [scrollable]="true"
+                     title="По годам" (elementSelectionChange)="getCurseData($event)"></app-bar-stack>
+    </div>
+  </div>
+</div>
+<div class="block" style="margin-top: 16px">
+  <div class="second-employee-page__bottom-container">
+    <div style="position:relative;">
+      <app-second-page-filters class="second-employee-page__filters"
+                               [selectList]="professionFilters"
+                               [value]="professionFilters"
+                               (selectedFiltersChange)="professionFiltersChange($event)"></app-second-page-filters>
+      <app-bar-stack [chartOptions]="professionStackBarData" [scrollable]="true" [titleBottom]="60"
+                     title="По годам" [tag]="'canvas'"></app-bar-stack>
+    </div>
+    <div *ngIf="multiChartOptions">
+      <app-mult-axes [chartOptions]="multiChartOptions"></app-mult-axes>
+      <div class="second-employee-page__colors-list">
+        <div *ngFor="let legend of legends" class="second-employee-page__legend">
+          <div class="second-employee-page__legend--color" [style.backgroundColor]="legend.color"></div>
+          <p class="second-employee-page__legend--text">{{legend.title}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

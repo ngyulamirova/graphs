@@ -1,0 +1,23 @@
+.employee-rate{
+  &__filter-container {
+    display: grid;
+    grid-template-columns: 1fr 30%;
+  }
+  &__colors-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  &__legend {
+    display: flex;
+    justify-content: flex-start;
+    &--color {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      border-radius: 30px;
+    }
+    &--text {
+      color: white;
+    }
+  }
+}

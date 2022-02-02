@@ -1,0 +1,6 @@
+<div class="pagination__container">
+  <div *ngFor="let page of pagesArr"
+       class="pagination__element"
+       [class.active]="selectedPage === page"
+       (click)="(selectedPage !== page) && selectedPageChange.emit(page)">{{page}}</div>
+</div>

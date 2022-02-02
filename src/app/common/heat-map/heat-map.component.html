@@ -1,0 +1,15 @@
+<div style="position: relative">
+  <h2>
+    <span>{{title}}</span>
+  </h2>
+  <div echarts
+       style="height: 270px"
+       (chartInit)="chartInstance = $event"
+       (chartClick)="daySelectionChange.emit($event)"
+       [theme]="'dark'"
+       [options]="chartOptions"></div>
+  <div class="heat-map__legend">
+    <div class="heat-map__legend--color"></div>
+    <p class="heat-map__legend--text">Курс</p>
+  </div>
+</div>

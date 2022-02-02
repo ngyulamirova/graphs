@@ -1,0 +1,9 @@
+<h2>
+  <span>{{title}}</span>
+  <ng-content></ng-content>
+</h2>
+<div echarts
+     [style.height]="_height"
+     (chartInit)="chartInstance = $event"
+     [theme]="'dark'"
+     [options]="chartOptions" class="demo-chart"></div>

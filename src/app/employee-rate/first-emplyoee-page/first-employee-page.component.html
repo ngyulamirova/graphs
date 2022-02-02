@@ -1,0 +1,12 @@
+<div class="block">
+  <div class="first-employee-page__container">
+    <app-bar-stack [chartOptions]="stackBarData" title="По годам"></app-bar-stack>
+    <app-basic-bar title="Динамика происшествий по годам" [options]="chartOptions"></app-basic-bar>
+  </div>
+</div>
+<div class="block" style="margin-top: 16px">
+  <div class="first-employee-page__container">
+    <app-heat-map title="По годам" [data]="filtredData" (daySelectionChange)="changeDay($event)"></app-heat-map>
+    <app-bar-stack *ngIf="dateData" [title]="title" [height] = "254" [chartOptions]="dateData"></app-bar-stack>
+  </div>
+</div>

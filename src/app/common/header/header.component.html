@@ -1,0 +1,29 @@
+<header [class.blur]="blur">
+  <div class="logo"></div>
+  <nav>
+    <button mat-icon-button class="header-button"
+            [class.active]="(router.url | splitQuery)  == '/statistics'"
+            routerLink="/statistics">
+      <mat-icon>auto_graph</mat-icon>
+    </button>
+    <button mat-icon-button class="header-button"
+            [class.active]="(router.url | splitQuery)  == '/employee'"
+            routerLink="/employee">
+      <mat-icon>leaderboard</mat-icon>
+    </button>
+    <button mat-icon-button class="header-button"
+            [class.active]="(router.url | splitQuery)  == '/map'"
+            routerLink="/statistics">
+      <mat-icon>map</mat-icon>
+    </button>
+  </nav>
+
+  <h1>Статистика по ОД/ОУ</h1>
+
+  <p-fileUpload mode="basic"
+                [customUpload]="true"
+                name="file[]"
+                [auto]="true"
+                chooseLabel="Загрузить XLS"
+                (uploadHandler)="uploadXls($event)"></p-fileUpload>
+</header>
